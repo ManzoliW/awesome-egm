@@ -48,12 +48,15 @@
 
 ## Official
 
-- [google/elephant-goldfish-model](https://github.com/google/elephant-goldfish-model) - Google's open-source plugin for designing and reviewing software with agents (Apache-2.0). It supports Claude Code, Codex, Antigravity, Cursor, Gemini, OpenCode and Copilot.
+- [google/elephant-goldfish-model](https://github.com/google/elephant-goldfish-model) - Google's open-source plugin for designing and reviewing software with agents (Apache-2.0). It supports Claude Code, Claude Cowork, Codex, ChatGPT desktop, Antigravity, Cursor, Gemini, OpenCode, Copilot and Muse.
   - [egm.dev](https://egm.dev) - Project website.
   - [Getting started](https://github.com/google/elephant-goldfish-model/blob/main/docs/getting_started.md) - First run, from brainstorm to approved spec.
   - [Harness guide](https://github.com/google/elephant-goldfish-model/blob/main/docs/harnesses.md) - Setup notes for each supported agent.
   - [Architecture](https://github.com/google/elephant-goldfish-model/blob/main/docs/designs/architecture.md) - EGM lifecycle and system design.
-  - [Releases](https://github.com/google/elephant-goldfish-model/releases) - Version history and changelogs.
+  - [FAQ](https://github.com/google/elephant-goldfish-model/blob/main/docs/faq.md) - Alternatives, review bottlenecks, velocity and other common questions.
+  - [Muse integration](https://github.com/google/elephant-goldfish-model/blob/main/docs/muse.md) - Installing and running EGM in Muse.
+  - [Releases](https://github.com/google/elephant-goldfish-model/releases) - Version history and changelogs. The latest release is v0.1.1 (Nov 6, 2026).
+  - [ChatGPT plugin listing](https://chatgpt.com/plugins/plugins_6aeb90f47ec88191a3c107e01d3eb357) - Published EGM plugin for the ChatGPT and Codex desktop apps.
 - [Introducing the Elephant-Goldfish Model plugin](https://opensource.googleblog.com/2026/10/introducing-elephant-goldfish-model-plugin.html) - Google Open Source Blog launch post (Oct 22, 2026).
 
 **Built-in skills**
@@ -79,11 +82,16 @@ claude plugin install egm@egm
 codex plugin marketplace add google/elephant-goldfish-model
 codex plugin add egm@egm
 
-# Antigravity
+# Antigravity CLI (in the Antigravity App or VS Code extension, run /plugin)
 agy plugin install https://github.com/google/elephant-goldfish-model
+
+# Muse (installs from a local clone)
+git clone https://github.com/google/elephant-goldfish-model.git
+muse plugins install ./elephant-goldfish-model --scope user
+muse plugins approve egm
 ```
 
-For Cursor, Gemini CLI, OpenCode and Copilot, follow the harness guide linked above.
+On the ChatGPT or Codex desktop app, install the published plugin listing linked above. For Claude Cowork, ChatGPT Work, Cursor, Gemini CLI, OpenCode and Copilot, follow the harness guide linked above. In Claude Code and Antigravity, skills use the `/egm:` prefix, for example `/egm:egm-brainstorm`.
 
 > ⚠️ Brainstorm and review need an agent that can start fresh subagents. A review that runs in the same context "is not a Goldfish review", so EGM stops instead.
 
@@ -193,6 +201,8 @@ EGM applied outside ordinary software specs, often through `egm-review-loop` wit
 - [GitGudAK/egm-eyewear-reviewers](https://github.com/GitGudAK/egm-eyewear-reviewers) - 👓 Specialist reviewer prompts for eyewear design.
 - [ai-summer2025/google-egm-clinical-protocol-designer](https://github.com/ai-summer2025/google-egm-clinical-protocol-designer) - 🏥 Adversarial review loop for clinical trial protocol design, in pure Python with no paid APIs.
 - [ai-summer2025/hedis-care-gap-agent](https://github.com/ai-summer2025/hedis-care-gap-agent) - 🏥 HEDIS care-gap closure agent with EGM adversarial review.
+- [siriani/elephant-referee-model](https://github.com/siriani/elephant-referee-model) - 🔬 Write research with an Elephant and have zero-context Goldfish referee it, like peer review for scientific work.
+- [linuxsunil/id-spec-studio](https://github.com/linuxsunil/id-spec-studio) - 🎓 Course design pipeline for instructional designers: brainstorm, draft, then four parallel Goldfish reviewers lock the spec.
 - [PaulBratslavsky/strapi-product-egm](https://github.com/PaulBratslavsky/strapi-product-egm) - Plan a Strapi product. Adds fresh-context reviews to the strapi-product-builder interview.
 
 ## Inspired by EGM
@@ -218,8 +228,10 @@ Projects that build on the fresh-context review idea and add their own roles or 
 - [Google's Elephant-Goldfish Model: Review the Plan Before Code](https://wavect.io/blog/elephant-goldfish-model-design-review/) - Wavect deep dive on the five review stages, limits and a team pilot. Also available in [DE](https://wavect.io/de/blog/elephant-goldfish-model-design-review/), [ES](https://wavect.io/es/blog/elephant-goldfish-model-design-review/) and [ZH](https://wavect.io/zh/blog/elephant-goldfish-model-design-review/).
 - [Google's Elephant Goldfish Model (EGM): What It Is and How It Works](https://www.mindstudio.ai/blog/google-elephant-goldfish-model-egm/) - MindStudio explainer.
 - [Google's Elephant-Goldfish Method for AI Design Reviews](https://www.digitalapplied.com/blog/google-elephant-goldfish-agent-design-review) - Digital Applied overview.
+- [Elephant-Goldfish Model (EGM): the free Google plugin that makes AI coding agents design first](https://aicon-hub.github.io/posts/egm-elephant-goldfish-model-google-open-source-spec-driven-development-plugin-guide.html) - AIcon Hub guide to spec-driven development with the plugin.
+- [Google's Elephant-Goldfish Model: Let a Forgetful AI Check Your Plan Before You Build It](https://medium.com/@vinayanand2/googles-elephant-goldfish-model-let-a-forgetful-ai-check-your-plan-before-you-build-it-5ebc6baa52fd) - Medium introduction.
 - [EGM Plugin: Installation in Claude Code and Codex, Workflow, and Use Cases](https://smartscope.blog/en/blog/elephant-goldfish-model-egm-plugin-installation-claude-code-2026/) - SmartScope install guide.
-- [The Elephant-Goldfish Model: Why the AI That Knows Least Reviews Best](https://pub.towardsai.net/the-elephant-goldfish-model-why-the-ai-that-knows-least-reviews-best-e88cad4626a1) - Towards AI deep dive.
+- [The Elephant-Goldfish Model: Why the AI That Knows Least Reviews Best](https://towardsai.com/p/machine-learning/the-elephant-goldfish-model-why-the-ai-that-knows-least-reviews-best) - Towards AI deep dive.
 - [EGM: Design and Review Skills for AI Coding Agents](https://www.beri.net/learning/google-elephant-goldfish-model-egm-docs) - Beri learning page.
 - [caleonardo/egm-ganular-steps](https://github.com/caleonardo/egm-ganular-steps) - A granular, manual step-by-step way to apply EGM with any chat tool and no plugins, with a diagram.
 - [sou350121/Agent-Playbook](https://github.com/sou350121/Agent-Playbook) - 🇨🇳 Chinese engineering playbook for AI agents, with a theory module on EGM subagents.
@@ -230,6 +242,7 @@ Projects that build on the fresh-context review idea and add their own roles or 
 - [Google open sources its Elephant-Goldfish Model plugin for AI coding](https://betanews.com/article/google-open-sources-its-elephant-goldfish-model-plugin-for-ai-coding/) - BetaNews.
 - [How Google's Elephant-Goldfish Model Revolutionises AI Coding Reliability](https://www.opensourceforu.com/2026/10/googles-elephant-goldfish-model-revolutionises-ai-coding-reliability/) - Open Source For You.
 - [Google Open-Sources the Elephant-Goldfish Model Plugin Its Engineers Use to Catch AI Coding Mistakes](https://www.linuxtoday.com/blog/google-open-sources-the-elephant-goldfish-model-plugin-its-engineers-use-to-catch-ai-coding-mistakes/) - Linux Today.
+- [Google AI Releases Elephant-Goldfish Model Plugin for Spec-First Coding](https://www.marktechpost.com/2026/11/08/google-elephant-goldfish-model-plugin-spec-review-coding-agents/) - MarkTechPost.
 - [Elephants, Goldfish and the New Golden Age of Software Engineering](https://www.i-programmer.info/news/145-mapping-a-gis/18932-elephants-goldfish-and-the-new-golden-age-of-software-engineering.html) - I Programmer coverage of Rensin's paper.
 
 ### Videos
@@ -242,6 +255,7 @@ Projects that build on the fresh-context review idea and add their own roles or 
 
 - [gsaini/egm-getting-started](https://github.com/gsaini/egm-getting-started) - Runs EGM end to end on a real codebase: brainstorm, draft, the five-stage Goldfish review, then resolve.
 - [Elephant-Goldfish Model: Review the Plan Before AI Writes Code](https://www.ai.joaoqueiros.com/blog/elephant-goldfish-model-claude-code-spec-review-ai-labs) - Notes on AI Labs' walkthrough of EGM on a demo app.
+- [sateesh2020/egm-goldfish-experiment](https://github.com/sateesh2020/egm-goldfish-experiment) - Reproducible experiment: a toy codebase and a design doc with seven planted flaws, testing whether zero-context Goldfish reviews catch more than a same-context review.
 - [neuralmind-ai/eg-demo](https://github.com/neuralmind-ai/eg-demo) - Demo of the elephant-goldfish method.
 - [rodolfochicone/egm-skills-map](https://github.com/rodolfochicone/egm-skills-map) - 🇧🇷 Interactive map of the EGM plugin skills for Claude Code.
 
@@ -249,7 +263,7 @@ Projects that build on the fresh-context review idea and add their own roles or 
 
 - [GitHub Issues](https://github.com/google/elephant-goldfish-model/issues) - Bug reports and feature requests.
 - [GitHub Discussions](https://github.com/google/elephant-goldfish-model/discussions) - Questions and ideas.
-- [newreleases.io](https://newreleases.io/project/github/google/elephant-goldfish-model) - Get notified about new releases.
+- [Releases feed](https://github.com/google/elephant-goldfish-model/releases.atom) - Atom feed for new releases. You can also use Watch → Custom → Releases on GitHub.
 
 ## Related Concepts
 
