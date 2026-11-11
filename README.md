@@ -24,6 +24,7 @@
   - [Gemini CLI and Antigravity](#gemini-cli-and-antigravity)
   - [OpenCode](#opencode)
   - [Pi Coding Agent](#pi-coding-agent)
+  - [Mistral Vibe](#mistral-vibe)
   - [DeepSeek Harness](#deepseek-harness)
   - [Hermes Agent](#hermes-agent)
   - [Other Harnesses and Installers](#other-harnesses-and-installers)
@@ -51,6 +52,7 @@
 - [google/elephant-goldfish-model](https://github.com/google/elephant-goldfish-model) - Google's open-source plugin for designing and reviewing software with agents (Apache-2.0). It supports Claude Code, Claude Cowork, Codex, ChatGPT desktop, Antigravity, Cursor, Gemini, OpenCode, Copilot and Muse.
   - [egm.dev](https://egm.dev) - Project website.
   - [Getting started](https://github.com/google/elephant-goldfish-model/blob/main/docs/getting_started.md) - First run, from brainstorm to approved spec.
+  - [60-second review on existing code](https://github.com/google/elephant-goldfish-model#try-a-60-second-review-on-existing-code) - Quickstart for brownfield projects: review existing docs and check documentation drift.
   - [Harness guide](https://github.com/google/elephant-goldfish-model/blob/main/docs/harnesses.md) - Setup notes for each supported agent.
   - [Architecture](https://github.com/google/elephant-goldfish-model/blob/main/docs/designs/architecture.md) - EGM lifecycle and system design.
   - [FAQ](https://github.com/google/elephant-goldfish-model/blob/main/docs/faq.md) - Alternatives, review bottlenecks, velocity and other common questions.
@@ -91,7 +93,7 @@ muse plugins install ./elephant-goldfish-model --scope user
 muse plugins approve egm
 ```
 
-On the ChatGPT or Codex desktop app, install the published plugin listing linked above. For Claude Cowork, ChatGPT Work, Cursor, Gemini CLI, OpenCode and Copilot, follow the harness guide linked above. In Claude Code and Antigravity, skills use the `/egm:` prefix, for example `/egm:egm-brainstorm`.
+On the ChatGPT or Codex desktop app, install the published plugin listing linked above. Cursor can install it from its marketplace catalog. For Claude Cowork, ChatGPT Work, Cursor, Gemini CLI, OpenCode and Copilot, follow the harness guide linked above. In Claude Code and Antigravity, skills use the `/egm:` prefix, for example `/egm:egm-brainstorm`.
 
 > ⚠️ Brainstorm and review need an agent that can start fresh subagents. A review that runs in the same context "is not a Goldfish review", so EGM stops instead.
 
@@ -130,6 +132,12 @@ Community projects that bring EGM to other agents and harnesses. Unless a projec
 - [sdsheeks/pi-egm](https://github.com/sdsheeks/pi-egm) - EGM for pi: design with context, review with fresh-context Goldfish reviewers.
 - [nsanta/pi-elephant-goldfish](https://github.com/nsanta/pi-elephant-goldfish) - A deep-context Elephant drafts specs and zero-context Goldfish stress-test them.
 - [thesawdawg/pi-egm](https://github.com/thesawdawg/pi-egm) - Pi-compatible plugin built from the Google repo.
+- [summerjch/pi-egm-design-review](https://github.com/summerjch/pi-egm-design-review) - EGM-inspired design review for Pi: five snapshot-only reviewers with no file, shell or delegation tools.
+- [asolis87/gentle-goldfish](https://github.com/asolis87/gentle-goldfish) - Fresh-context review skills for Pi and Gentle Shell: comprehension, zoom-out and spec drift reports.
+
+### Mistral Vibe
+
+- [Nosenzor/elephant-goldfish-vibe](https://github.com/Nosenzor/elephant-goldfish-vibe) - Standalone Agent Plugins 1.0 package that ports EGM to Mistral Vibe, with `/egm:*` skills and fresh-context Goldfish subagents.
 
 ### DeepSeek Harness
 
@@ -203,6 +211,8 @@ EGM applied outside ordinary software specs, often through `egm-review-loop` wit
 - [ai-summer2025/hedis-care-gap-agent](https://github.com/ai-summer2025/hedis-care-gap-agent) - 🏥 HEDIS care-gap closure agent with EGM adversarial review.
 - [siriani/elephant-referee-model](https://github.com/siriani/elephant-referee-model) - 🔬 Write research with an Elephant and have zero-context Goldfish referee it, like peer review for scientific work.
 - [linuxsunil/id-spec-studio](https://github.com/linuxsunil/id-spec-studio) - 🎓 Course design pipeline for instructional designers: brainstorm, draft, then four parallel Goldfish reviewers lock the spec.
+- [Meddelin/egm-product](https://github.com/Meddelin/egm-product) - 📋 EGM for product managers: repo and metric discovery, cross-functional reality checks and PRDs grounded in the actual stack.
+- [Amz34/wire-pid-kg](https://github.com/Amz34/wire-pid-kg) - 🏭 Turns P&ID process diagrams into a queryable knowledge graph. An Elephant extracts and a zero-context Goldfish swarm reviews.
 - [PaulBratslavsky/strapi-product-egm](https://github.com/PaulBratslavsky/strapi-product-egm) - Plan a Strapi product. Adds fresh-context reviews to the strapi-product-builder interview.
 
 ## Inspired by EGM
@@ -230,6 +240,8 @@ Projects that build on the fresh-context review idea and add their own roles or 
 - [Google's Elephant-Goldfish Method for AI Design Reviews](https://www.digitalapplied.com/blog/google-elephant-goldfish-agent-design-review) - Digital Applied overview.
 - [Elephant-Goldfish Model (EGM): the free Google plugin that makes AI coding agents design first](https://aicon-hub.github.io/posts/egm-elephant-goldfish-model-google-open-source-spec-driven-development-plugin-guide.html) - AIcon Hub guide to spec-driven development with the plugin.
 - [Google's Elephant-Goldfish Model: Let a Forgetful AI Check Your Plan Before You Build It](https://medium.com/@vinayanand2/googles-elephant-goldfish-model-let-a-forgetful-ai-check-your-plan-before-you-build-it-5ebc6baa52fd) - Medium introduction.
+- [Google's Elephant-Goldfish plugin: 5 stages of fresh-context review and 3 catches](https://dev.to/piekwerk/googles-elephant-goldfish-plugin-5-stages-of-fresh-context-review-before-your-agent-writes-code-20e0) - DEV Community hands-on write-up with real review findings.
+- [Google Elephant-Goldfish Plugin: Install and Use EGM](https://freakyjolly.com/google-elephant-goldfish-plugin-guide/) - FreakyJolly install and usage guide.
 - [EGM Plugin: Installation in Claude Code and Codex, Workflow, and Use Cases](https://smartscope.blog/en/blog/elephant-goldfish-model-egm-plugin-installation-claude-code-2026/) - SmartScope install guide.
 - [The Elephant-Goldfish Model: Why the AI That Knows Least Reviews Best](https://towardsai.com/p/machine-learning/the-elephant-goldfish-model-why-the-ai-that-knows-least-reviews-best) - Towards AI deep dive.
 - [EGM: Design and Review Skills for AI Coding Agents](https://www.beri.net/learning/google-elephant-goldfish-model-egm-docs) - Beri learning page.
@@ -247,6 +259,7 @@ Projects that build on the fresh-context review idea and add their own roles or 
 
 ### Videos
 
+- [Official EGM explainer](https://github.com/google/elephant-goldfish-model#readme) - About 70 seconds, embedded at the top of the official README.
 - [Google Just Open Sourced Its AI Coding Secret: Elephant Goldfish Model](https://www.youtube.com/watch?v=6zQ2xIXpLa8) - Overview of the plugin and spec-driven development with coding agents.
 - [O novo jeito de programar com IA que o Google usa, agora no Claude Code](https://www.youtube.com/watch?v=niRV-yuu5q4) - 🇧🇷 EGM with Claude Code, in Portuguese.
 - [Elephant Goldfish Modelとは？ AIの設計を別の視点で見直すGoogleの手法](https://www.youtube.com/watch?v=jZJltc_vjUA) - 🇯🇵 Podcast episode on reviewing a design before implementation, in Japanese.
