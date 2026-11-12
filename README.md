@@ -41,6 +41,7 @@
   - [News Coverage](#news-coverage)
   - [Videos](#videos)
   - [Demos and Explainers](#demos-and-explainers)
+  - [Limitations and Critiques](#limitations-and-critiques)
 - [Community](#community)
 - [Related Concepts](#related-concepts)
 - [Related Awesome Lists](#related-awesome-lists)
@@ -55,6 +56,7 @@
   - [60-second review on existing code](https://github.com/google/elephant-goldfish-model#try-a-60-second-review-on-existing-code) - Quickstart for brownfield projects: review existing docs and check documentation drift.
   - [Harness guide](https://github.com/google/elephant-goldfish-model/blob/main/docs/harnesses.md) - Setup notes for each supported agent.
   - [Architecture](https://github.com/google/elephant-goldfish-model/blob/main/docs/designs/architecture.md) - EGM lifecycle and system design.
+  - [Review pipeline design](https://github.com/google/elephant-goldfish-model/blob/main/docs/designs/review.md) - How the five review stages and seven reviewer personas work.
   - [FAQ](https://github.com/google/elephant-goldfish-model/blob/main/docs/faq.md) - Alternatives, review bottlenecks, velocity and other common questions.
   - [Muse integration](https://github.com/google/elephant-goldfish-model/blob/main/docs/muse.md) - Installing and running EGM in Muse.
   - [Releases](https://github.com/google/elephant-goldfish-model/releases) - Version history and changelogs. The latest release is v0.1.1 (Nov 6, 2026).
@@ -111,6 +113,7 @@ Community projects that bring EGM to other agents and harnesses. Unless a projec
 
 - [vt-bg/egm-copilot](https://github.com/vt-bg/egm-copilot) - Installs EGM into Copilot with 7 skills and 9 zero-context Goldfish reviewer agents, for JetBrains IDEs, VS Code and Copilot CLI.
 - [jheo4/elephant-goldfish-copilot](https://github.com/jheo4/elephant-goldfish-copilot) - EGM template for Copilot in VS Code, with zero-context review, no-code gates and extensible packs.
+- [EdneiMonteiro/elephant-gun](https://github.com/EdneiMonteiro/elephant-gun) - 🇧🇷 Design and review workflows for GitHub Copilot CLI, independently derived from EGM.
 
 ### Cursor
 
@@ -126,6 +129,7 @@ Community projects that bring EGM to other agents and harnesses. Unless a projec
 - [oli-nelson/EGM-OpenCode-V2](https://github.com/oli-nelson/EGM-OpenCode-V2) - Experimental OpenCode V2 plugin with the `egm` agent, read-only reviewers, skills and commands.
 - [notsatyarth/opencode-egm](https://github.com/notsatyarth/opencode-egm) - EGM plugin for OpenCode v2.
 - [jope35/opencode-egm](https://github.com/jope35/opencode-egm) - OpenCode plugin for the Elephant-Goldfish Model.
+- [MaxiGP0/egm-opencode](https://github.com/MaxiGP0/egm-opencode) - Unofficial OpenCode V2 adapter that ships a pinned copy of the upstream skills. README in English and Spanish.
 
 ### Pi Coding Agent
 
@@ -151,6 +155,7 @@ Community projects that bring EGM to other agents and harnesses. Unless a projec
 ### Hermes Agent
 
 - [willbohn/hermes-egm](https://github.com/willbohn/hermes-egm) - Design reviews for Hermes Agent, with fresh-context, tool-free reviewers and checked citations.
+- [Carlosdev-cod/HermesFish](https://github.com/Carlosdev-cod/HermesFish) - 🇪🇸 Hermes Agent plugin for design, review and drift detection. Also targets Claude Code, Codex and Antigravity.
 
 ### Other Harnesses and Installers
 
@@ -171,6 +176,7 @@ Takes on the Elephant/Goldfish pattern that don't depend on Google's plugin.
 - [Sam-Si/skills](https://github.com/Sam-Si/skills) - MIT-licensed agent skills collection whose first skill is EGM.
 - [Fallenstedt/refined-elephant-goldfish](https://github.com/Fallenstedt/refined-elephant-goldfish) - Skills that help you understand the problem before you build a solution.
 - [chienweiluo/eg-skills](https://github.com/chienweiluo/eg-skills) - A personal Elephant/Goldfish engineering workflow.
+- [Demon1110/egm-elephant-goldfish-review](https://github.com/Demon1110/egm-elephant-goldfish-review) - 🇨🇳 Design-review workflow skill with a zero-context, read-only Goldfish, for system designs, requirements and product plans.
 
 ## Forks and Extended Workflows
 
@@ -198,6 +204,7 @@ EGM combined with other spec-driven development (SDD) frameworks.
 - [@rizkiaprita/egm](https://www.npmjs.com/package/@rizkiaprita/egm) - npm package for drafting specs, reviewing designs and checking implementation drift.
 - [Dimoncelli/cold-jury](https://github.com/Dimoncelli/cold-jury) - Zero-dependency Node.js CLI with a cross-CLI review gate inspired by EGM. It runs sterile, hostile reviews to catch bugs the authoring agent would agree with.
 - [arcobaleno64/seven-sec](https://github.com/arcobaleno64/seven-sec) - Stateless pre-commit git-diff gate. A zero-context Goldfish reviewer (Antigravity or Codex) blocks bugs, security issues and drift.
+- [msp-blip/egm-knoepfe](https://github.com/msp-blip/egm-knoepfe) - 🇩🇪 Button bar above the Claude Code input for the EGM commands, with an explanation on hover.
 
 ## Domain-Specific Applications
 
@@ -213,6 +220,7 @@ EGM applied outside ordinary software specs, often through `egm-review-loop` wit
 - [linuxsunil/id-spec-studio](https://github.com/linuxsunil/id-spec-studio) - 🎓 Course design pipeline for instructional designers: brainstorm, draft, then four parallel Goldfish reviewers lock the spec.
 - [Meddelin/egm-product](https://github.com/Meddelin/egm-product) - 📋 EGM for product managers: repo and metric discovery, cross-functional reality checks and PRDs grounded in the actual stack.
 - [Amz34/wire-pid-kg](https://github.com/Amz34/wire-pid-kg) - 🏭 Turns P&ID process diagrams into a queryable knowledge graph. An Elephant extracts and a zero-context Goldfish swarm reviews.
+- [scottbrowncpa-creator/ci-public](https://github.com/scottbrowncpa-creator/ci-public) - 🏫 Claude Code plugin with plain-language writing skills and blind Goldfish reviewers for school finance work. Three agents are adapted from EGM.
 - [PaulBratslavsky/strapi-product-egm](https://github.com/PaulBratslavsky/strapi-product-egm) - Plan a Strapi product. Adds fresh-context reviews to the strapi-product-builder interview.
 
 ## Inspired by EGM
@@ -242,6 +250,10 @@ Projects that build on the fresh-context review idea and add their own roles or 
 - [Google's Elephant-Goldfish Model: Let a Forgetful AI Check Your Plan Before You Build It](https://medium.com/@vinayanand2/googles-elephant-goldfish-model-let-a-forgetful-ai-check-your-plan-before-you-build-it-5ebc6baa52fd) - Medium introduction.
 - [Google's Elephant-Goldfish plugin: 5 stages of fresh-context review and 3 catches](https://dev.to/piekwerk/googles-elephant-goldfish-plugin-5-stages-of-fresh-context-review-before-your-agent-writes-code-20e0) - DEV Community hands-on write-up with real review findings.
 - [Google Elephant-Goldfish Plugin: Install and Use EGM](https://freakyjolly.com/google-elephant-goldfish-plugin-guide/) - FreakyJolly install and usage guide.
+- [An elephant, a goldfish, and in my case a nameless main context](https://geerttheys.substack.com/p/an-elephant-a-goldfish-and-in-my) - Geert Theys on applying the pattern in practice.
+- [Google's Open-Source Elephant-Goldfish Model (EGM) for AI Agents](https://logic42.ai/articles/google-elephant-goldfish-model-open-source-ai-agents) - Logic42 overview, with a comparison to Spec Kit and Kiro.
+- [Elephant-Goldfish Model: reviewers with no memory check your AI's design](https://senn-tech.com/en/blog/elephant-goldfish-model-google-design-review) - Senn Tech explainer.
+- [Google's Elephant-Goldfish Model: Spec Before Code](https://byteiota.com/googles-elephant-goldfish-model-spec-before-code/) - Overview from byteiota.
 - [EGM Plugin: Installation in Claude Code and Codex, Workflow, and Use Cases](https://smartscope.blog/en/blog/elephant-goldfish-model-egm-plugin-installation-claude-code-2026/) - SmartScope install guide.
 - [The Elephant-Goldfish Model: Why the AI That Knows Least Reviews Best](https://towardsai.com/p/machine-learning/the-elephant-goldfish-model-why-the-ai-that-knows-least-reviews-best) - Towards AI deep dive.
 - [EGM: Design and Review Skills for AI Coding Agents](https://www.beri.net/learning/google-elephant-goldfish-model-egm-docs) - Beri learning page.
@@ -269,8 +281,17 @@ Projects that build on the fresh-context review idea and add their own roles or 
 - [gsaini/egm-getting-started](https://github.com/gsaini/egm-getting-started) - Runs EGM end to end on a real codebase: brainstorm, draft, the five-stage Goldfish review, then resolve.
 - [Elephant-Goldfish Model: Review the Plan Before AI Writes Code](https://www.ai.joaoqueiros.com/blog/elephant-goldfish-model-claude-code-spec-review-ai-labs) - Notes on AI Labs' walkthrough of EGM on a demo app.
 - [sateesh2020/egm-goldfish-experiment](https://github.com/sateesh2020/egm-goldfish-experiment) - Reproducible experiment: a toy codebase and a design doc with seven planted flaws, testing whether zero-context Goldfish reviews catch more than a same-context review.
+- [Jayaprakash8887/elephant-goldfish-trial](https://github.com/Jayaprakash8887/elephant-goldfish-trial) - Full record of using EGM to design and build a real Spring Boot and Keycloak admin module from a PRD.
 - [neuralmind-ai/eg-demo](https://github.com/neuralmind-ai/eg-demo) - Demo of the elephant-goldfish method.
 - [rodolfochicone/egm-skills-map](https://github.com/rodolfochicone/egm-skills-map) - 🇧🇷 Interactive map of the EGM plugin skills for Claude Code.
+
+### Limitations and Critiques
+
+EGM is useful, but it isn't free or perfect. A full review starts 15 or more subagent runs, so token cost is the most common complaint. Fresh context is also not the same as independent thinking when every reviewer runs on the same model. The official FAQ above and the sateesh2020 experiment under Demos are good starting points.
+
+- [Exclude host instructions from Codex and Antigravity reviewers](https://github.com/google/elephant-goldfish-model/issues/237) - Open issue: on these agents, project files such as `AGENTS.md` still reach Goldfish reviewers. Claude Code reviewers start clean.
+- [Document review cost, duration, and plan limits](https://github.com/google/elephant-goldfish-model/issues/385) - Open issue asking for measured cost and time per review.
+- [Limit file access and parallelism during EGM reviews](https://github.com/google/elephant-goldfish-model/issues/262) - Open hardening issue about which linked files reviewers read automatically.
 
 ## Community
 
